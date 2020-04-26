@@ -1,0 +1,82 @@
+@import 'variables.scss';
+
+@font-face {
+	font-family: 'Techna Sans';
+	src: url(../fonts/TechnaSans-Regular.otf);
+}
+
+html{
+	font-size: calc(16px + 0.05vw);
+}
+
+body{
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-weight: 300;
+	color: $black;
+	-webkit-text-size-adjust: 100%;
+}
+
+.container{
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	outline: none;
+}
+
+a{
+	color: $linkcolor;
+}
+
+.creditarea{
+	font-family: 'Open Sans', sans-serif;
+	border-top: 1px solid #f0f0f0;
+	width: 100%;
+	max-width: 99%;
+	text-align: center;
+	padding: 2vw 1vw;
+	line-height: 1.6;
+	font-size: 90%;
+}
+
+.rotatewarning{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: $black;
+	color: $white;
+	z-index: 200;
+	font-family: 'Techna Sans', sans-serif;
+	align-items: center;
+	justify-content: center;
+	display: none;
+	flex-direction: column;
+	font-size: calc(16px + 1vw);
+
+	svg{
+		margin-bottom: 10vw;
+	}
+
+	p{
+		margin-top: 3vw;
+		text-align: center;
+		font-size: 80%;
+		opacity: 0.5;
+		max-width: 50vw;
+		line-height: 1.2;
+	}
+}
+
+@media(max-width: 1000px){
+	.creditarea{
+		font-size: 80%;
+	}
+}
+
+@media (orientation: portrait) and (max-width: 800px){
+	.rotatewarning{
+		display: flex;
+	}
+}

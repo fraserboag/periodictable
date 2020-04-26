@@ -1,0 +1,52 @@
+@import 'variables.scss';
+
+@keyframes svg-animation{
+	0%{
+		transform: rotateZ(0deg);
+	}
+	100%{
+		transform: rotateZ(360deg);
+	}
+}
+
+@keyframes circle-animation{
+	0%, 25%{
+		stroke-dashoffset: 280;
+		transform: rotate(0);
+	}
+  
+	50%, 75%{
+		stroke-dashoffset: 75;
+		transform: rotate(45deg);
+	}
+  
+	100%{
+		stroke-dashoffset: 280;
+		transform: rotate(360deg);
+	}
+}
+
+.spinner-container{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 2.5rem;
+}
+
+.spinner{
+	animation: 1.5s linear infinite svg-animation;
+}
+
+circle{
+	animation: 1.4s ease-in-out infinite both circle-animation;
+	display: block;
+	fill: transparent;
+	stroke: $black;
+	opacity: 0.3;
+	stroke-linecap: round;
+	stroke-dasharray: 320;
+	stroke-dashoffset: 280;
+	stroke-width: 0.5rem;
+	transform-origin: 50% 50%;
+}

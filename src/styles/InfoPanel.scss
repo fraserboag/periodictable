@@ -1,0 +1,166 @@
+@import 'variables.scss';
+
+.InfoPanel{
+	position: fixed;
+	top: 0.5vw;
+	left: 0.5vw;
+	width: 50%;
+	max-width: 35rem;
+	height: calc(100% - 1vw);
+	background: $white;
+	z-index: 50;
+	-webkit-transform: translateX(calc(-100% - 4vw));
+	transform: translateX(calc(-100% - 4vw));
+	-webkit-transition: 500ms;
+	transition: 500ms;
+	box-shadow: 0 0 50px -30px $black;
+	font-size: 1rem;
+	font-family: 'Open Sans', sans-serif;
+	overflow-y: auto;
+	
+	h2{
+		font-family: 'Techna Sans', sans-serif;
+		font-size: 2rem;
+		margin-bottom: 2rem;
+
+		span{
+			float: right;
+			opacity: 0.3;
+		}
+	}
+
+	p{
+		line-height: 1.4;
+	}
+
+	.content{
+		padding: 2.5rem;
+	}
+
+	.thumbnail-container{
+		width: 100%;
+		display: block;
+		background: $lightgrey;
+		height: calc(250px + 7vw);
+		position: relative;
+
+		.close{
+			position: absolute;
+			top: 0.5rem;
+			right: 0.5rem;
+			z-index: 200;
+			display: block;
+			cursor: pointer;
+			background: transparentize($black, 0.3);
+			width: 2rem;
+			height: 2rem;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			svg{
+				pointer-events: none;
+				width: 70%;
+				height: auto;
+			}
+		}
+
+		.close:hover{
+			background: $black;
+		}
+
+		.thumbnail{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-position: center;
+			background-size: cover;
+			z-index: 50;
+			background-color: $lightgrey;
+			opacity: 0;
+		}
+
+		.thumbnail.visible{
+			opacity: 1;
+		}
+
+		.thumbnail:before{
+			content: "Image courtesy of Wikipedia";
+			position: absolute;
+			bottom: 0.5rem;
+			left: 0.5rem;
+			background: transparentize($black, 0.3);
+			color: $white;
+			padding: 0.5rem 1rem;
+			font-size: 0.75rem;
+		}
+	}
+
+	.thumbnail-container.hidden{
+		display: none;
+	}
+
+	.element-info{
+		width: 100%;
+		margin-top: 2rem;
+		table-layout: fixed;
+
+		tr:nth-child(odd) td{
+			background: transparentize($black, 0.96);
+		}
+	
+		td{
+			padding: 0.8rem;
+			line-height: 1.3;
+		}
+
+		.icon{
+			max-width: 1rem;
+			height: auto;
+			margin-left: 0.4rem;
+			stroke: $linkcolor;
+			position: relative;
+			top: 0.1rem;
+		}
+	}
+
+	sup{
+		vertical-align: super;
+		font-size: 0.6rem;
+	}
+	
+}
+
+.InfoPanel.visible{
+	display: block;
+	transform: translateX(0);
+}
+
+@media (max-width: 1000px){
+	
+	.InfoPanel{
+
+		.content{
+			padding: 2rem;
+		}
+
+		h2{
+			margin-bottom: 1.5rem;
+		}
+
+		.element-info{
+			margin-top: 1.5rem;
+		}
+	}
+
+}
+
+@media (max-width: 800px){
+
+	.InfoPanel{
+		width: calc(100% - 1vw);
+	}
+
+}

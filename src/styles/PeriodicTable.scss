@@ -1,0 +1,16 @@
+@import 'variables.scss';
+
+.PeriodicTable{
+	display: flex;
+	flex-direction: column;
+	padding-bottom: 2.5vw;
+	width: 100%;
+	max-width: 99%;
+	user-select: none;
+	position: relative;
+
+	.elements{
+		display: flex;
+		flex-flow: row wrap;
+	}
+}

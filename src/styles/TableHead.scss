@@ -1,0 +1,25 @@
+.TableHead{
+	display: flex;
+	flex-direction: row;
+}
+
+.colhead{
+	background: transparent;
+	text-align: center;
+	height: initial;
+	font-family: 'Techna Sans', sans-serif;
+	cursor: default;
+	border: 0;
+	border-radius: 0;
+	position: relative;
+	overflow: visible;
+	padding: 2vw 0 1vw 0;
+}
+
+.highlight_active .colhead{
+	opacity: 0.3;
+}
+
+.highlight_active .colhead:hover{
+	opacity: 1;
+}

@@ -1,0 +1,114 @@
+@import 'variables.scss';
+
+.Element{
+	border: 1px solid $white;
+	overflow: hidden;
+	flex: 0 0 5.5556%;
+	background: $lightgrey;
+	border-collapse: collapse;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	height: 5.4vw;
+	cursor: pointer;
+	font-size: 0.85vw;
+
+	.symbol{
+		font-weight: 700;
+		font-size: 1.7vw;
+		margin-bottom: 0.1vw;
+		font-family: 'Techna Sans', sans-serif;
+	}
+
+	.number{
+		position: absolute;
+		top: 0.3vw;
+		right: 0.3vw;
+	}
+
+	.name{
+		margin-bottom: 0.2vw;
+	}
+}
+
+.Element.placeholder{
+	cursor: default;
+
+	div{
+		pointer-events: none;
+	}
+
+	.name{
+		margin-top: 0.9rem;
+	}
+}
+
+.Element.blank{
+	border: 0;
+	background: $white;
+	height: 1.6vh;
+}
+
+.Element:not(.blank):not(.colhead):not(.placeholder):hover{
+	border: 1px solid $black;
+}
+
+.highlight_active .Element:not(.highlight):not(.colhead){
+	opacity: 0.3;
+}
+
+.Element, .Minimap span{
+	&[data-category="transition metal"]{
+		background: $transition-metal;
+	}
+}
+
+.Element, .Minimap span{
+	&[data-category="nonmetal"]{
+		background: $nonmetal;
+	}
+}
+
+.Element, .Minimap span{
+	&[data-category="alkali metal"]{
+		background: $alkali-metal;
+	}
+}
+
+.Element, .Minimap span{
+	&[data-category="alkaline earth metal"]{
+		background: $alkaline-earth-metal;
+	}
+}
+
+.Element, .Minimap span{
+	&[data-category="metalloid"]{
+		background: $metalloid;
+	}
+}
+
+.Element, .Minimap span{
+	&[data-category="post-transition metal"]{
+		background: $post-transition-metal;
+	}
+}
+
+.Element, .Minimap span{
+	&[data-category="noble gas"]{
+		background: $noble-gas;
+	}
+}
+
+.Element, .Minimap span{
+	&[data-category="lanthanide"]{
+		background: $lanthanide;
+	}
+}
+
+.Element, .Minimap span{
+	&[data-category="actinide"]{
+		background: $actinide;
+	}
+}
