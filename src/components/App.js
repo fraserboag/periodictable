@@ -118,7 +118,7 @@ class App extends React.Component {
 				<Overlay visible={this.state.overlay_visible} block_click={this.state.overlay_block_click} handleOverlayClick={this.handleOverlayClick}  />
 				<PeriodicTable handleElementClick={this.handleElementClick} />
 				<div className="creditarea">
-					<span className="credit">Created by <a href="https://boag.online" target="_blank" rel="noopener noreferrer">Fraser Boag</a>.  Please get in touch via my website with any corrections or feature requests.</span>
+					<span className="credit">Just a little side project by web developer <a href="https://www.boag.online" target="_blank">Fraser Boag</a>. Please feel free to get in touch via my personal website if you have any suggestions, corrections or questions. Find this useful and want to say thanks? <a href="https://www.buymeacoffee.com/boag" target="_blank">Buy me a beer!</a></span>
 				</div>
 			</div>
 		);
